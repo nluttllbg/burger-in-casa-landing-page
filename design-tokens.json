@@ -1,0 +1,92 @@
+{
+  "brand": "Burger in Casa",
+  "visual_direction": "American burger / retro fast food / editorial food photography",
+  "colors": {
+    "espresso": "#281C1A",
+    "burgundy": "#A91F20",
+    "mustard": "#F6B91F",
+    "cream": "#F7F0DF",
+    "coral": "#E65A53",
+    "ink": "#211917",
+    "white": "#FFFFFF"
+  },
+  "typography": {
+    "display": {
+      "family": "Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif",
+      "weight": 900
+    },
+    "body": {
+      "family": "Arial, Helvetica, sans-serif",
+      "weight": 400
+    }
+  },
+  "radius": {
+    "small": "10px",
+    "medium": "20px",
+    "large": "30px",
+    "pill": "999px"
+  },
+  "spacing_px": {
+    "xs": 8,
+    "sm": 12,
+    "md": 20,
+    "lg": 32,
+    "xl": 56,
+    "xxl": 88
+  },
+  "layout": {
+    "max_width": "1200px",
+    "desktop_gutter": "6vw",
+    "mobile_gutter": "20px"
+  },
+  "breakpoints_px": {
+    "mobile": 640,
+    "tablet": 900
+  },
+  "assets": [
+    "assets/hero-principal.jpg",
+    "assets/burger-promocional.jpg",
+    "assets/produto-cheddar-smash.jpg",
+    "assets/acompanhamento-coxinha.jpg",
+    "assets/ambiente-conceitual.jpg",
+    "assets/banner-promocional.jpg"
+  ],
+  "commercial_links": {
+    "whatsapp": {
+      "url": "https://wa.me/5561999314669",
+      "status": "CONFIRMADO",
+      "evidence": "telefone comercial listado como WhatsApp em diretório empresarial"
+    },
+    "ordering_hub": {
+      "url": "https://linktr.ee/burgerincasa",
+      "status": "CONFIRMADO",
+      "note": "central da marca; destino direto do cardápio não validado"
+    },
+    "menu_direct": {
+      "url": null,
+      "status": "NÃO VERIFICADO"
+    },
+    "ifood_direct": {
+      "url": null,
+      "status": "NÃO ENCONTRADO"
+    },
+    "instagram": {
+      "url": "https://www.instagram.com/burgerincasaoficial/",
+      "status": "CONFIRMADO"
+    },
+    "phone": {
+      "url": "tel:+5561999314669",
+      "display": "+55 61 99931-4669",
+      "status": "CONFIRMADO"
+    },
+    "maps": {
+      "url": "https://www.google.com/maps/search/?api=1&query=Q+Quadra+3%2C+70%2C+Dom+Bosco%2C+Cidade+Ocidental%2C+GO",
+      "status": "CONFIRMADO"
+    },
+    "reservations": {
+      "url": null,
+      "status": "NÃO VERIFICADO",
+      "note": "há menção a reservas como característica, mas sem URL de agendamento"
+    }
+  }
+}

@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Burger in Casa — hamburgueria em Cidade Ocidental, Goiás.">
+<title>Burger in Casa | Design System e Landing Page</title>
+<link rel="stylesheet" href="tokens.css">
+<style>
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--color-cream);color:var(--color-ink);font-family:var(--font-body);line-height:1.5}
+a{color:inherit;text-decoration:none}.wrap{width:min(var(--content-width),calc(100% - 12vw));margin:auto}
+header{height:76px;background:var(--color-espresso);color:#fff;display:flex;align-items:center;position:relative;z-index:2}
+.nav{display:flex;align-items:center;justify-content:space-between;gap:24px}.brand{font:900 26px var(--font-display);letter-spacing:.2px;color:#fff;line-height:.9}.brand small{display:block;color:var(--color-mustard);font:700 9px var(--font-body);letter-spacing:2px;text-transform:uppercase;margin-top:6px}
+nav{display:flex;gap:28px;font:700 11px var(--font-display);text-transform:uppercase;letter-spacing:.6px}nav a{opacity:.9}.actions{display:flex;gap:10px}
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:44px;padding:0 22px;border-radius:var(--radius-pill);font-size:12px;font-weight:800;letter-spacing:.3px;border:1px solid transparent;transition:.2s}
+.btn:hover{transform:translateY(-2px);filter:brightness(1.06)}.btn-yellow{background:var(--color-mustard);color:var(--color-espresso)}.btn-outline{border-color:var(--color-mustard);color:#fff}.btn-coral{background:var(--color-coral);color:#fff}
+.hero{background:var(--color-burgundy);color:#fff;min-height:440px;display:grid;grid-template-columns:.78fr 1.22fr;align-items:center;overflow:hidden}
+.hero-copy{padding:60px 0 60px max(6vw,calc((100vw - var(--content-width))/2))}
+h1,h2,h3{font-family:var(--font-display);text-transform:uppercase;line-height:.98;margin:0;letter-spacing:-.4px}
+h1{font-size:clamp(42px,5.1vw,76px);max-width:520px}h2{font-size:clamp(32px,4vw,54px)}h3{font-size:24px}
+.hero p{max-width:390px;color:#f4ded8;font-size:14px;margin:22px 0 26px}
+.hero-image{height:440px;min-width:0}.hero-image img{width:100%;height:100%;object-fit:cover;object-position:center}
+.promo-row{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:-1px;position:relative}
+.promo-photo{height:176px;border-radius:0 0 24px 24px;overflow:hidden}.promo-photo img{width:100%;height:100%;object-fit:cover}
+.promo-card{background:var(--color-mustard);border-radius:0 0 24px 24px;padding:28px 32px;display:flex;align-items:center;justify-content:space-between;gap:16px;min-height:176px}
+.promo-card p{font-size:12px;max-width:250px;margin:10px 0 0}.promo-card img{width:38%;max-height:130px;object-fit:cover;border-radius:50%}
+.about{padding:82px 0;display:grid;grid-template-columns:1fr 1fr;gap:7%;align-items:center}
+.about-image img{width:100%;max-height:430px;object-fit:cover;border-radius:4px}
+.about-copy h2{max-width:520px;margin-bottom:34px}.accent{color:var(--color-coral)}
+.features{display:grid;grid-template-columns:1fr 1fr;gap:28px 24px}.feature{display:grid;grid-template-columns:32px 1fr;gap:12px}.feature-icon{font-size:22px;color:var(--color-burgundy)}.feature h3{font-size:17px}.feature p{font-size:11px;color:#6d625d;margin:6px 0 0}
+.banner{background:var(--color-mustard);display:grid;grid-template-columns:.85fr 1.15fr;min-height:330px;overflow:hidden;align-items:center}
+.banner-copy{padding:50px 20px 50px max(6vw,calc((100vw - var(--content-width))/2))}.banner-copy h2{font-size:clamp(34px,4vw,54px)}.banner-copy p{max-width:390px;font-size:13px;margin:18px 0 24px}
+.banner-image{height:330px}.banner-image img{width:100%;height:100%;object-fit:cover;object-position:center}
+footer{background:var(--color-espresso);color:#fff;padding:26px 0}.foot{display:flex;justify-content:space-between;align-items:center;gap:20px;font-size:11px}.foot-links{display:flex;gap:20px;flex-wrap:wrap}.foot a{color:#f5d58a}
+.note{background:#fff7e4;border:1px solid #e7d7aa;padding:18px;border-radius:14px;margin:28px auto;color:#574832;font-size:13px}
+.docs{padding:60px 0}.docs h2{margin-bottom:24px}.doc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.doc-card{background:#fff;border-radius:16px;padding:20px;border:1px solid #eee3d1}.swatches{display:flex;gap:8px;margin:12px 0}.swatch{height:36px;flex:1;border-radius:7px}.doc-card p{font-size:12px;color:#655b55}
+.float-cta{position:fixed;right:22px;bottom:22px;z-index:5;box-shadow:0 8px 24px #0003;background:#25D366;color:#102719}.btn-whatsapp{background:#25D366;color:#102719}.contact{padding:64px 0}.contact-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}.contact-card{background:#fff;border:1px solid #eee3d1;border-radius:16px;padding:22px}.contact-card h3{font-size:19px;margin-bottom:8px}.contact-card p{font-size:12px;color:#655b55;margin:0 0 14px}.hours{display:grid;grid-template-columns:1fr 1fr;gap:8px;font-size:12px}.hours span:nth-child(odd){font-weight:700}@media(max-width:640px){.contact-grid{grid-template-columns:1fr}.contact{padding:44px 0}}
+@media(max-width:900px){nav{display:none}.hero{grid-template-columns:1fr}.hero-copy{padding:48px 6vw 24px}.hero-image{height:330px}.about{gap:32px}.promo-card{padding:22px}.doc-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:640px){header{height:66px}.wrap{width:calc(100% - 40px)}.actions .btn-outline{display:none}.hero{min-height:0}.hero-copy{padding:42px 20px 20px}.hero-image{height:260px}.promo-row{grid-template-columns:1fr;margin:14px 20px 0}.promo-photo,.promo-card{border-radius:18px;min-height:150px;height:150px}.about{padding:56px 0;grid-template-columns:1fr;gap:28px}.about-image img{max-height:300px}.features{gap:22px 12px}.feature{grid-template-columns:24px 1fr;gap:8px}.feature h3{font-size:15px}.banner{grid-template-columns:1fr}.banner-copy{padding:42px 20px 20px}.banner-image{height:230px}.foot{align-items:flex-start;flex-direction:column}.doc-grid{grid-template-columns:1fr}.float-cta{right:14px;bottom:14px}}
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap nav">
+    <a class="brand" href="#inicio">Burger in Casa<small>Hamburgueria artesanal</small></a>
+    <nav><a href="#destaques">Destaques</a><a href="#sobre">A casa</a><a href="#pedido">Peça agora</a></nav>
+    <div class="actions"><a class="btn btn-outline" href="https://www.instagram.com/burgerincasaoficial/" target="_blank" rel="noopener">Instagram</a><a class="btn btn-yellow" href="https://linktr.ee/burgerincasa" target="_blank" rel="noopener">Cardápio e pedidos</a></div>
+  </div>
+</header>
+<main id="inicio">
+<section class="hero">
+  <div class="hero-copy"><h1>Hambúrguer de verdade. <span class="accent">Feito para apaixonar.</span></h1><p>Conheça a Burger in Casa e descubra os canais oficiais para consultar opções e fazer seu pedido.</p><div class="actions"><a class="btn btn-whatsapp" href="https://wa.me/5561999314669?text=Ol%C3%A1%21%20Vim%20pelo%20site%20da%20Burger%20in%20Casa%20e%20gostaria%20de%20fazer%20um%20pedido." target="_blank" rel="noopener">Pedir pelo WhatsApp</a><a class="btn btn-coral" href="https://linktr.ee/burgerincasa" target="_blank" rel="noopener">Ver cardápio e pedidos</a></div></div>
+  <div class="hero-image"><img src="assets/hero-principal.jpg" alt="Hambúrguer artesanal em fotografia gastronômica conceitual"></div>
+</section>
+<section class="wrap promo-row" id="destaques">
+  <div class="promo-photo"><img src="assets/burger-promocional.jpg" alt="Hambúrguer em tábua de madeira, imagem conceitual"></div>
+  <div class="promo-card"><div><h3>Seu próximo favorito</h3><p>Explore os canais da Burger in Casa e consulte os produtos disponíveis.</p><a class="btn btn-coral" style="margin-top:12px" href="https://linktr.ee/burgerincasa" target="_blank" rel="noopener">Explorar opções</a></div><img src="assets/produto-cheddar-smash.jpg" alt="Hambúrguer com cheddar, imagem conceitual"></div>
+</section>
+<section class="wrap about" id="sobre">
+  <div class="about-image"><img src="assets/produto-cheddar-smash.jpg" alt="Hambúrguer com queijo cheddar, imagem conceitual"></div>
+  <div class="about-copy"><h2>Uma experiência <span class="accent">cheia de sabor</span></h2><div class="features">
+    <div class="feature"><div class="feature-icon">⌂</div><div><h3>Na sua região</h3><p>Estabelecimento identificado em Cidade Ocidental, Goiás.</p></div></div>
+    <div class="feature"><div class="feature-icon">♡</div><div><h3>Hambúrgueres</h3><p>Hambúrgueres artesanais aparecem nas informações públicas consultadas.</p></div></div>
+    <div class="feature"><div class="feature-icon">✦</div><div><h3>Acompanhamentos</h3><p>Consulte o cardápio oficial para conferir opções e disponibilidade.</p></div></div>
+    <div class="feature"><div class="feature-icon">➜</div><div><h3>Peça online</h3><p>Acesse a central de links divulgada pela marca.</p></div></div>
+  </div></div>
+</section>
+<section class="banner" id="pedido">
+  <div class="banner-copy"><h2>Deu vontade? <span class="accent">Peça agora.</span></h2><p>Acesse a central de atendimento e pedidos da Burger in Casa para conferir os canais disponíveis.</p><div class="actions"><a class="btn btn-whatsapp" href="https://wa.me/5561999314669?text=Ol%C3%A1%21%20Gostaria%20de%20fazer%20um%20pedido%20na%20Burger%20in%20Casa." target="_blank" rel="noopener">Pedir pelo WhatsApp</a><a class="btn btn-coral" href="https://linktr.ee/burgerincasa" target="_blank" rel="noopener">Outros canais de pedido</a></div></div>
+  <div class="banner-image"><img src="assets/banner-promocional.jpg" alt="Hambúrguer sobre fundo amarelo, imagem conceitual"></div>
+</section>
+<section class="contact" id="contato"><div class="wrap"><h2>Fale com a <span class="accent">Burger in Casa</span></h2><p style="max-width:650px;color:#655b55">Escolha o canal oficial mais conveniente para pedir, consultar opções ou encontrar a hamburgueria.</p><div class="contact-grid">
+  <article class="contact-card"><h3>WhatsApp</h3><p>(61) 99931-4669 · canal confirmado em diretórios comerciais.</p><a class="btn btn-whatsapp" href="https://wa.me/5561999314669?text=Ol%C3%A1%21%20Gostaria%20de%20falar%20com%20a%20Burger%20in%20Casa." target="_blank" rel="noopener">Conversar agora</a></article>
+  <article class="contact-card"><h3>Cardápio e pedidos</h3><p>Central de links divulgada pela própria marca. O destino direto do menu não foi confirmado separadamente.</p><a class="btn btn-coral" href="https://linktr.ee/burgerincasa" target="_blank" rel="noopener">Abrir central de pedidos</a></article>
+  <article class="contact-card"><h3>Localização e redes</h3><p>Q Quadra 3, 70 - Casa, Dom Bosco, Cidade Ocidental - GO, 72887-790.</p><div class="actions"><a class="btn btn-yellow" href="https://www.google.com/maps/search/?api=1&query=Q+Quadra+3%2C+70%2C+Dom+Bosco%2C+Cidade+Ocidental%2C+GO" target="_blank" rel="noopener">Como chegar</a><a class="btn btn-outline" style="background:var(--color-espresso)" href="https://www.instagram.com/burgerincasaoficial/" target="_blank" rel="noopener">Instagram</a></div></article>
+</div><div class="note"><strong>Horários publicados:</strong><div class="hours"><span>Seg–Qui</span><span>18h–23h</span><span>Sex–Sáb</span><span>18h–23h30</span><span>Domingo</span><span>18h–23h</span></div><small>Confirme o funcionamento diretamente com a empresa antes de se deslocar.</small></div></div></section>
+<section class="wrap" style="padding:0 0 8px"><div class="note"><strong>Transparência sobre as imagens:</strong> as fotografias deste protótipo foram geradas por IA e são conceituais; não comprovam a aparência dos produtos ou do ambiente real.</div><div class="note"><strong>Canais ainda não confirmados:</strong> URL direta do cardápio, loja específica no iFood, sistema de reservas online e site próprio. Não foram criados botões fictícios para esses serviços.</div></section>
+</main>
+<footer><div class="wrap foot"><a class="brand" href="#inicio">Burger in Casa<small>Hamburgueria artesanal</small></a><div class="foot-links"><a href="https://wa.me/5561999314669" target="_blank" rel="noopener">WhatsApp</a><a href="https://linktr.ee/burgerincasa" target="_blank" rel="noopener">Pedidos</a><a href="https://www.instagram.com/burgerincasaoficial/" target="_blank" rel="noopener">Instagram</a><a href="tel:+5561999314669">Ligar</a><a href="https://www.google.com/maps/search/?api=1&query=Q+Quadra+3%2C+70%2C+Dom+Bosco%2C+Cidade+Ocidental%2C+GO" target="_blank" rel="noopener">Como chegar</a></div><span>Conceito visual demonstrativo</span></div></footer>
+<a class="btn float-cta" href="https://wa.me/5561999314669?text=Ol%C3%A1%21%20Vim%20pelo%20site%20da%20Burger%20in%20Casa." target="_blank" rel="noopener" aria-label="Abrir WhatsApp da Burger in Casa">WhatsApp · Pedir agora</a>
+</body></html>
